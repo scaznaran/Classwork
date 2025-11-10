@@ -1,7 +1,9 @@
 ---
 title: "Classwork Activity"
-author: "Enter Your Name"
+author: "Sofia Posey"
 output: html_notebook
+editor_options: 
+  chunk_output_type: inline
 ---
 
 
@@ -27,13 +29,19 @@ head(students)
 
 ```{r}
 # Remove the Name column
+students$Name <- NULL
 
 ```
+
+```{r}
+students
+```
+
 
 
 ### Question:
 Why might someone drop a column like name or ID from a dataset?
-
+> In my opinion is better to det rid of information not valuable for the data set. Bacause Name only had numeric identifiers that were continues and not unique R already enumerates all observations so keeping it would be redundant.
 ### Answer:
 
 ## Step 3: Visualize
@@ -42,7 +50,7 @@ library(ggplot2)
 ```
 
 ```{r}
-ggplot(Students_Clean, aes(x = Major, y = Satisfaction, fill = Major)) +
+ggplot(students, aes(x = Major, y = Satisfaction, fill = Major)) +
   geom_boxplot() +
   labs(
     title = "Student Satisfaction by Major",
@@ -62,7 +70,17 @@ ggplot(Students_Clean, aes(x = Major, y = Satisfaction, fill = Major)) +
 3. Do you think this chart is accurate?
 4. Why? Why not?
 
+1. We see that Computer science major has a more equally distributed data, because the mean seems to be in the midle of the bar, while data science has more data in the lower satisfaction data but the top of the bar is further than the mean this could indicate the existence of outliers. The math major is more concentrated, in other words most students have a similar satisfaction grade. When atlking about pattern we see that the y axis just show the majority of the data between 6 and 8 so overall there is not a big difference in the students opinion.
+
+2. One hypothesis might be that most of the majors are science majors and they might share similar programs classes or proffesors.
+Also this students are part of an specific group kind of similar in a way that most students might have similar tastes.
+
+3. Because is created data it might not be completly accurate because it doesn't represent any real group.  It doesnt seem very well distributed because it doesn't show many outliers.
+
+4. I think the create is accurate when representing the previusly stablished data. However this data doesn't represent any real data. So we can not assume that this  could explain a real life scenario. It would be unethical to use it as so.
+
 ## Step 5: Questions on Git, GitHub and R Markdown
+
 
 ### Questions:
 
@@ -74,4 +92,7 @@ ggplot(Students_Clean, aes(x = Major, y = Satisfaction, fill = Major)) +
 6. How could R Markdown help you explain your analysis to someone else?
 
 ### Answers:
-
+1. This commands add the changes made on the files in our repository.
+2. The difference is that commit just adds a comment for that version that is been added and it will show on github, while git push publishes the changes made to the file into the github repository.
+3. Is a cloud system that allows to share proyects and code and the same time find and see other's peoples project.
+4.
